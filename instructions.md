@@ -119,3 +119,241 @@ git rebase <имя ветки в конец которой хоти добави
 
 **!! Важно: не добавлять предпологаемо игнорируемые файлы в индекс, во избежании ошибок работы *.gitignore***
 
+## GitHub <a name="GitHub"></a>
+
+![](Image/gitHubHead.jpg)
+
+### Что такое GitHub? <a name="what_GitHub"></a>
+
+GitHub — крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки.
+
+Веб-сервис основан на системе контроля версий Git и разработан на Ruby on Rails и Erlang компанией GitHub, Inc (ранее Logical Awesome). Сервис бесплатен для проектов с открытым исходным кодом и (с 2019 года) небольших частных проектов, предоставляя им все возможности (включая SSL), а для крупных корпоративных проектов предлагаются различные платные тарифные планы.
+
+### Создание репозитория на GitHub <a name="create_repo_GitHub"></a>
+
+**!!!** Для этого нужно зарегистрироваться на GitHub. 
+
+1. Перейти в меню создания репозитория:
+* Перейти на Dashboaed и в панеле Top Repositories нажать на кнопку New 
+<p align = center>
+<img src = "Image/repo1.png" width = 300 height = 200>
+</p> 
+
++ Или перейти в Repositories и так же нажать New
+
+<p align = center>
+<img src = "Image/repo0.png" width = 600 height = 50>
+</p> 
+
+![](Image/repo2.png)
+
+3. Указать имя репозитория без пробелов и на английском.
+4. Указать открытость репозитория: публичный или приватный. 
+5. Задать прочии дополнительные парамтры: Description, Add .gitignore и т.д. 
+6. Нажать Create Repository
+<p align = center>
+<img src = "Image/repo3.png" width = 600 height = 170>
+</p>
+
+**!!** Если вы выберите пункт Add a README file вас полсле Нажатия Create Repository вас сразу перекинут к вашему репозиторий в привычном виде. 
+
+![](Image/repo4.png)
+
+Если вы этого не сделали то вам предложат несколько вариантов:
+
+![](repo5.png)
+
+Выберите подходящий. 
+
+### Подключение репозитория с GitHub <a name="link_connect_repo_GitHub"></a>
+
+#### Способ 1:
+
+**В локальном репозитории:**
+1. Сгенерировать специальный уникальный ключ:\
+В локальном репозитории ввести комманду *ssh-keygen*.
+* Указать путь (Enter – если выбрать по умолчанию).
+<p align = center>
+<img src = "Image/repo6.png" width = 600 height = 80>
+</p>
+
+    Пример пути: /d/GB/repoHub/repoHub(название файла).
+
+* Указать специальную фразу (необязательно, 2 Enter). 
+<p align = center>
+<img src = "Image/repo7.png" width = 600 height = 60>
+</p>
+
+2. В локальном репозитории ввести комманду cat <директория файла с расширением .pub (Искать в выводе после комманды в шаге 1.2)>.
+<p align = center>
+<img src = "Image/repo8.png" width = 600 height = 60>
+</p>
+
+3. Копируем выведенный ключ.
+<p align = center>
+<img src = "Image/repo9.png" width = 600 height = 170>
+</p>
+
+**На GitHub:** 
+
+4. Add SSH key:
+    
+* Нажать на аватар слева:
+
+<p align = center>
+<img src = "Image/repo10.png" width = 300 height = 600>
+</p>
+
+* Нажать на Settings: 
+
+<p align = center>
+<img src = "Image/repo11.png" width = 300 height = 600>
+</p>
+
+* Нажать на New SSH Key:
+
+<p align = center>
+<img src = "Image/repo12.png" width = 600 height = 70>
+</p>
+
+* Нажать на Add SSH Key: 
+
+<p align = center>
+<img src = "Image/repo13.png" width = 600 height = 300>
+</p>
+
+5. Подтвердить пароль на аккаунте.
+
+![](Image/repo14-1.png)
+
+8. Переходим в репозиторий. Code -> SSH, копируем содержимое.
+
+![](Image/repo15.png)
+
+10. Подключаем в локальный репозиторий:
+git clone “(ссылка SSH)” “(название папки в которую скопируем  репозиторий).
+
+<p align = center>
+<img src = "Image/repo16.png" width = 600 height = 70>
+</p>
+
+#### Способ 2: 
+**На GitHub:** 
+1. Создать новый репозиторий.
+2. В пункте “…or push an existing repository from the command line” скопировать все комманды. Там будет примерно такое:
+*git remote add origin https://github.com/SountRock/gitLinks2.git*
+*git branch -M main*
+*git push -u origin main*
+
+**В локальном репозитории:**
+
+3. Ввести все эти комманды. 
+
+#### Способ 3: 
+**На GitHub:** 
+1. Создать новый репозиторий.
+2. Переходим в репозиторий. Code -> HTTPS, копируем содержимое.
+
+**В локальном репозитории:**
+
+3. Ввести  *git clone git@github.com:SountRock/tapSynth.git tapSynth*
+
+
+![](Image/repo18.png)
+
+### Отправка данных на удаленный репозиторий <a name="push_GitHub"></a>
+
+Для этого используется комманада *git push*. 
+
+#### Удаление веток в удаленном репозитории <a name="push_del_GitHub"></a>
+
+*git push --delete origin* <ветка1> <ветка2>  …  – удаляет указанные ветки в удаленном репозитории.
+
+### Получение данных из удаленнх репозитория <a name="pull_GitHub"></a>
+
+Для этого используется комманада *git pull*.
+
+### Fork <a name="fork"></a>
+
+Форк (Fork) — собственное ответвление (fork) какого-то проекта. Это означает, что GitHub создаст вашу собственную копию проекта, данная копия будет находиться в вашем пространстве имён, и вы сможете легко делать изменения путём отправки (push) изменений.
+
+Для того, чтобы получить копию проекта нам нужно перейти на страничку проекта и нажать на Fork. 
+
+![](Image/repo19-1.png)
+
+После вам предложат назвать копию. 
+
+![](Image/repo20.png)
+
+Если вы определились с названием, нажимаем Create Fork. После завершения копирования вы получите нужную вам копию.
+
+### Pull request <a name="pull_request"></a>
+
+После того как вы отправите новые данные на удаленную копию, на страничке это копии появиться опция Compere & pull request.
+
+![](Image/repo21.png)
+
+Если вы ее выберите то, внесенные вами изменения будут отправлены в качестве пакета обновлений автору проета. 
+
+Но перед отправкой вам предложат написать описание к вашим изменениям.
+
+![](Image/repo22.png)
+
+Или можно зайти во вкладку Pull Requests и нажать на New Pull Request.
+
+![](Image/repo23.png)
+
+### Codespaces <a name="codespaces"></a>
+
+Codespaces - это VSCode в браузере, запущенный в заранее описанном окружении (devcontainer) или в стандартном, в который входит python, node.js, Docker и прочее. Все это крутится в облаке и бесплатно за первые 60 часов в месяц.
+
+#### Как попасть в Codespaces <a name="why_open_codespaces"></a>
+
+Достаточно просто открыть необходимый вам репозиторий и нажать на яркую зеленую кнопку code, перейти в codespaces и выбрать Create codespace on main. 
+
+![](Image/repo24.jpeg)
+
+#### Devcontainers <a name="devcontainers"></a>
+
+devcontainers - расширение для VSCode, которое позволяет использовать Docker-контейнер, как полнофункциональное окружение для разработки.
+
+Самый простой способ создать конфиг — запустить стандартный codespaces, найти в списке команд VSCode  Codespaces: Add Dev Container Configuration Filesи выбрать в выпадающем меню все, что тебе нужно в проекте, например:
+
+>{\
+> "name": "Node.js",\
+>	"image": "mcr.microsoft.com/devcontainers \javascript-node:16",\
+>"features": {}\
+>}
+
+![](Image/repo24.jpeg)
+
+### Возможные ошибки <a name="errors"></a>
+
+#### Если возникает ошибка fatal: Could not read from remote repository <a name="errors1"></a>
+
+В локальном репозитории: 
+1. *eval `ssh-agent -s`.* 
+2. *ssh-add* <директория пути для ssh>.
+
+#### Если .gitignore не работает <a name="gitignore_errors"></a>
+
+Способ 1:\
+Ввести: 
+1. *git rm -r  --cached .*
+2. *git add*
+
+Способ 2:
+1. Удалить нужные файлы из индеса с помощью *reset* <имя файла 1> <имя файла 2> ...
+2. Пересозадть файл *.gitignore*
+
+## Дополнительные материалы <a name="more_info"></a>
+
+[30 команд Git, необходимых для освоения интерфейса командной строки Git](https://habr.com/ru/companies/ruvds/articles/599929/)
+
+[Git для новичков (часть 1)](https://habr.com/ru/articles/541258/)
+
+[Git для новичков (часть 2)](https://habr.com/ru/articles/542616/)
+
+[Работа с удалёнными репозиториями](hhttps://git-scm.com/book/ru/v2/Основы-Git-Работа-с-удалёнными-репозиториями)
+
+[GitHub Codespaces](https://habr.com/ru/companies/akbarsdigital/articles/703554/)
