@@ -312,3 +312,16 @@ Github является одной из самых популярных плат
 Для исправления ошибки отсутствия регулярных обновлений рекомендуется регулярно вносить изменения в ваш репозиторий. Это может быть включение новых функций, исправление ошибок или обновление документации. Вы также можете обозначать время для регулярного обновления вашего репозитория, чтобы поддерживать активность проекта и привлекать других разработчиков.
 
 В заключение, исправление этих семи распространенных ошибок при создании репозитория на Github поможет улучшить качество вашего проекта, упростить совместную работу и повысить его видимость в сообществе разработчиков.
+## Work with remotes
+#### Showing Your Remotes
+To see which remote servers you have configured, you can run the git remote command. It lists the shortnames of each remote handle you’ve specified. If you’ve cloned your repository, you should at least see origin — that is the default name Git gives to the server you cloned from:
+*  git clone https://github.com/schacon/ticgit
+* Cloning into 'ticgit'...
+* remote: Reusing existing pack: 1857, done.
+* remote: Total 1857 (delta 0), reused 0 (delta 0)
+* Receiving objects: 100% (1857/1857), 374.35 KiB | 268.00 KiB/s, done.
+* Resolving deltas: 100% (772/772), done.
+* Checking connectivity... done.
+* cd ticgit
+* git remote
+* origin
